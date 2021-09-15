@@ -1,11 +1,10 @@
 
-// export const data = {
-//         cliente1:[id=1,Nombre="Avianca"],
-//         Cliente2:[id=2,Nombre="Lan"],
-//         cliente3:[id=3,Nombre="Vivair"],
-//         cliente4:[id=4,Nombre="Jetblue"],     
-//         cliente5:[id=5,Nombre="AeroMexico"],
-// }
+export const data = [
+    {id:1,cliente:"Avianca"},
+    {id:2,cliente:"Vivair"},
+    {id:3,cliente:"Lan"},
+    {id:4,cliente:"Jetblue"}
+]
 
 
 
