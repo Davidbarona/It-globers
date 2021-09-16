@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Questrial&display=swap');
+
+$background:#02475E;
+$primary-color:#687980;
+$secondary-color:#F3BDA1;
+$complementary-color:#FEFECC;
+
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+h1{
+   font-size: 2rem !important; 
+   text-decoration: none !important;
+   font-family: 'Questrial', sans-serif;
+   
+}
+
+
+body{
+    background-image: url("https://res.cloudinary.com/djezbveru/image/upload/v1631777411/samples/wing-cloud-sky-sunrise-sunset-atmosphere-107966-pxhere.com_1_hh249r.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+

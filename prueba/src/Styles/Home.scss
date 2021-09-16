@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Questrial&display=swap');
+
+$background:#02475E;
+$primary-color:#687980;
+$secondary-color:#F3BDA1;
+$complementary-color:#FEFECC;
+
+
+
+
+
+.welcome{
+    margin-top: 400px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.welcomeTittle{
+    width: 700px;
+    color:$background
+
+}
+
+
+@media screen and (max-width:920px){
+    .welcome{
+        margin-top: 300px;
+    }
+
+    .welcomeTittle{
+       font-size: 1.5rem !important;
+    }
+}

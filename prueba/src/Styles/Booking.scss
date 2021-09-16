@@ -1,0 +1,17 @@
+
+$background:#02475E;
+$primary-color:#687980;
+$secondary-color:#F3BDA1;
+$complementary-color:#FEFECC;
+
+
+
+.containerMessage{
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.bookingMessage{
+    color:$complementary-color !important;
+}

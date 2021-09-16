@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import {
-  email,
-  name,
-  celular,
-  edad
-} from "../Validations/regex.";
+import {email,name,celular,} from "../Validations/regex.";
+import { LightBox } from "./LightBox";
+import '../Styles/Form.scss'
 
 export const Form = () => {
 
@@ -23,6 +20,8 @@ export const Form = () => {
     age: false,
   });
 
+  const [notify, setNotify] = useState(false)
+
  
   //Validate
   const handleChange = (e) => {
@@ -39,8 +38,8 @@ export const Form = () => {
     if(e.target.name==="celular"){
         !celular.test(e.target.value) &&  setErrors({...errors,[e.target.name] :true});
     }
-     if (e.target.name==="edad") {
-        !edad.test(e.target.value) &&  setErrors({...errors,[e.target.name] :true});
+     if (e.target.name==="edad" && (e.target.value <= 17 || e.target.value > 100)) {
+        setErrors({...errors,[e.target.name] :true}); 
     }
   };
 
@@ -66,83 +65,92 @@ export const Form = () => {
       });
 
       cleanForm()
+      setNotify(true)
+
+         setTimeout(() => {
+        setNotify(false);
+      },5000);
+  
+
     } else {
       console.log("formulario mal dligenciado");
     }
   };
 
   return (
-    <div>
+    <div className="container_form">
       <form onSubmit={handleSubmit}>
-        <label>
-          Nombre Completo:
+        <h1>Formulario</h1>
           <br />
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Ingresa tu Nombre completo"
             required
             value={form.name}
             onChange={handleChange}
+            className="inputForm"
           />
           <br />
-          <span>
+          <span className="alert_error">
             {errors.name && (
               <p>
                 Escriba su nombre completo sin espacios ni caracteres especiales{" "}
               </p>
             )}
           </span>
-        </label>
-        <label>
-          Email:
           <br />
           <input
             type="email"
-            placeholder="email"
+            placeholder="Ingresa tu Email"
             name="email"
             value={form.email}
             onChange={handleChange}
             required
+            className="inputForm"
           />
           <br />
-          <span>{errors.email && <p>Escriba un Email valido</p>}</span>
-        </label>
-        <label>
-          Celular:
+          <span className="alert_error">{errors.email && <p>Escriba un Email valido</p>}</span>
           <br />
           <input
             type="number"
             name="celular"
-            placeholder="celular"
+            placeholder="Ingresa tu numero celular"
             required
             value={form.celular}
             onChange={handleChange}
+            className="inputForm"
           />
           <br />
-          <span>{errors.celular&& <p>su celular debe de tener 10 numeros</p>}</span>
-        </label>
-        <label>
-          Edad:
+          <span className="alert_error">{errors.celular&& <p>su celular debe de tener 10 numeros</p>}</span>
           <br />
           <input
             type="number"
             name="edad"
-            placeholder="edad"
+            placeholder="Ingresa tu edad"
             required
             value={form.edad}
             onChange={handleChange}
+            className="inputForm"
           />
           <br />
-          <span>
+          <span className="alert_error">
             {errors.edad && (
               <p>su rango de edad debe de estar entre los 18 a 100 años</p>
             )}
           </span>
-        </label>
+
         <br />
-        <button>Enviar</button>
+        <button
+        type="submit">Enviar</button>
+         {
+        notify &&  <LightBox 
+        mensajes ={"los datos fueron pasados con éxito"}
+        />
+      }
       </form>
+     
+    
     </div>
   );
 };
