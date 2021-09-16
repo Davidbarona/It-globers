@@ -8,9 +8,9 @@ import AppRouter from './Route/AppRouter';
 
 ReactDOM.render(
   <BrowserRouter>
-  <React.StrictMode>
+
     <AppRouter/>
-  </React.StrictMode>
+
   </BrowserRouter>,
   document.getElementById('root')
 );

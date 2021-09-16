@@ -7,7 +7,7 @@ const AppRouter = () => {
             <Switch>
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/booking/:params" component={Booking}/>
-                <Redirect to="/" />
+                <Redirect to="/home" />
             </Switch>
     )
 }
